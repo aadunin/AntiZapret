@@ -13,33 +13,36 @@ jobs:
 
       - name: Fetch original hosts
         run: |
-          # Скачиваем нативный hosts с GitHub
+          # Скачиваем свежий hosts
           curl -sSL -o hosts https://raw.githubusercontent.com/pumPCin/AntiZapret/main/hosts
 
       - name: Generate update-hosts.rsc
         run: |
           mkdir -p mikrotik
 
-          # Debug: показываем первые 10 строк файла hosts
+          # Показываем превью для отладки
           echo "=== hosts preview ==="
           head -n 10 hosts
           echo "====================="
 
-          # Начинаем сборку RSC
-          echo "/ip dns static remove [find comment=\"autohost\"]" > mikrotik/update-hosts.rsc
+          # Начинаем собирать RSC
+          echo "/ip dns static remove [find comment=\"autohost\"]" \
+            > mikrotik/update-hosts.rsc
           cnt=0
 
-          # Парсим каждую непустую и некомментарийную строку
-          while IFS= read -r ip rest; do
-            # rest — это все домены после IP
+          # Парсим каждую непустую и некомментированную строку
+          while read -r ip rest; do
             for d in $rest; do
               echo "/ip dns static add name=$d address=$ip ttl=1d comment=\"autohost\"" \
                 >> mikrotik/update-hosts.rsc
               cnt=$((cnt+1))
             done
+          # фильтруем только реальные записи
           done < <(grep -Ev '^(#|$)' hosts)
 
-          # Лог о том, сколько записей собрано
+          # Финальный лог в скрипте
           echo "/log info \"[update-hosts] Added $cnt entries\"" \
             >> mikrotik/update-hosts.rsc
+
+          # Это видно в выводе Actions
           echo ":: Generated $cnt entries"
