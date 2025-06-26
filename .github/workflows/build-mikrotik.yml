@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -15,14 +16,14 @@ jobs:
           mkdir -p mikrotik
           echo "/ip dns static remove [find comment=\"autohost\"]" > mikrotik/update-hosts.rsc
           cnt=0
-          # парсим оригинальный hosts
-          grep -Ev '^(#|$)' hosts | while read ip rest; do
+          # парсим оригинальный hosts без -e-падения на EOF
+          while IFS= read -r ip rest; do
             for d in $rest; do
               echo "/ip dns static add name=$d address=$ip ttl=1d comment=\"autohost\"" \
                 >> mikrotik/update-hosts.rsc
-              ((cnt++))
+              cnt=$((cnt+1))
             done
-          done
+          done < <(grep -Ev '^(#|$)' hosts)
           echo "/log info \"[update-hosts] Added $cnt entries\"" \
             >> mikrotik/update-hosts.rsc
           echo ":: Generated $cnt entries"
