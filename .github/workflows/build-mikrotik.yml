@@ -9,28 +9,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) Клонируем репозиторий и сохраняем креды для пуша
       - uses: actions/checkout@v3
         with:
-          persist-credentials: true   # важно, чтобы был доступ на push
+          persist-credentials: true
 
-      # 2) Скачиваем оригинальный hosts
       - name: Fetch original hosts
         run: |
           curl -sSL -o hosts \
             https://raw.githubusercontent.com/pumPCin/AntiZapret/main/hosts
 
-      # 3) Генерируем Mikrotik-скрипт
       - name: Generate update-hosts.rsc
         run: |
           mkdir -p mikrotik
-          echo "/ip dns static remove [find comment=\"autohost\"]" \
+          echo "/ip dns static remove [find address-list=\"autohost\"]" \
             > mikrotik/update-hosts.rsc
-
           cnt=0
+
           while read -r ip rest; do
             for d in $rest; do
-              echo "/ip dns static add name=$d address=$ip ttl=1d comment=\"autohost\"" \
+              # пропускаем локал/броадкаст
+              if [[ "$ip" == "127.0.0.1" && ( "$d" == "local" || "$d" == "localhost" || "$d" == "localhost.localdomain" ) ]]; then
+                continue
+              fi
+              if [[ "$ip" == "255.255.255.255" && "$d" == "broadcasthost" ]]; then
+                continue
+              fi
+
+              # 0.0.0.0 → черная дыра в TEST-NET-1
+              if [[ "$ip" == "0.0.0.0" ]]; then
+                ip_addr="192.0.2.1"
+              else
+                ip_addr="$ip"
+              fi
+
+              echo "/ip dns static add name=$d address=$ip_addr ttl=1d address-list=autohost" \
                 >> mikrotik/update-hosts.rsc
               cnt=$((cnt+1))
             done
@@ -38,10 +50,8 @@ jobs:
 
           echo "/log info \"[update-hosts] Added $cnt entries\"" \
             >> mikrotik/update-hosts.rsc
-
           echo ":: Generated $cnt entries"
 
-      # 4) Коммитим и пушим mikrotik/update-hosts.rsc в ваш форк
       - name: Commit & Push update-hosts.rsc
         run: |
           git config user.name "github-actions"
