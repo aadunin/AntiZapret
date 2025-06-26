@@ -21,36 +21,48 @@ jobs:
       - name: Generate update-hosts.rsc
         run: |
           mkdir -p mikrotik
+          # Сначала чистим старые записи
           echo "/ip dns static remove [find address-list=\"autohost\"]" \
             > mikrotik/update-hosts.rsc
+
+          declare -A seen
           cnt=0
 
           while read -r ip rest; do
             for d in $rest; do
-              # пропускаем локал/броадкаст
-              if [[ "$ip" == "127.0.0.1" && ( "$d" == "local" || "$d" == "localhost" || "$d" == "localhost.localdomain" ) ]]; then
+
+              # пропускаем локальные и broadcasthost
+              if [[ "$ip" == "127.0.0.1" && ( "$d" == "local" || "$d" == "localhost" || \
+                   "$d" == "localhost.localdomain" ) ]]; then
                 continue
               fi
               if [[ "$ip" == "255.255.255.255" && "$d" == "broadcasthost" ]]; then
                 continue
               fi
 
-              # 0.0.0.0 → черная дыра в TEST-NET-1
-              if [[ "$ip" == "0.0.0.0" ]]; then
-                ip_addr="192.0.2.1"
-              else
-                ip_addr="$ip"
-              fi
+              # подмена 0.0.0.0 → TEST-NET-1 blackhole
+              [[ "$ip" == "0.0.0.0" ]] && ip_addr="192.0.2.1" || ip_addr="$ip"
 
+              # вычленяем уникальный ключ
+              key="$ip_addr|$d"
+              if [[ -n "${seen[$key]}" ]]; then
+                continue
+              fi
+              seen[$key]=1
+
+              # генерим команду
               echo "/ip dns static add name=$d address=$ip_addr ttl=1d address-list=autohost" \
                 >> mikrotik/update-hosts.rsc
               cnt=$((cnt+1))
             done
           done < <(grep -Ev '^(#|$)' hosts)
 
+          # лог в конце RSC
           echo "/log info \"[update-hosts] Added $cnt entries\"" \
             >> mikrotik/update-hosts.rsc
-          echo ":: Generated $cnt entries"
+
+          # выводим в Action-лог, чтобы сразу видеть результат
+          echo ":: Generated $cnt unique entries"
 
       - name: Commit & Push update-hosts.rsc
         run: |
