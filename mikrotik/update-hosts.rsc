@@ -28,7 +28,6 @@
 /ip dns static add name=w.deepl.com address=204.12.192.219 ttl=1d address-list=autohost
 /ip dns static add name=www.dell.com address=204.12.192.219 ttl=1d address-list=autohost
 /ip dns static add name=www.guilded.gg address=204.12.192.219 ttl=1d address-list=autohost
-/ip dns static add name=www.tiktok.com address=204.12.192.219 ttl=1d address-list=autohost
 /ip dns static add name=api.imgur.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=console.anthropic.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=deezer.com address=204.12.192.220 ttl=1d address-list=autohost
@@ -50,7 +49,6 @@
 /ip dns static add name=www.deezer.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=alkalimakersuite-pa.clients6.google.com address=204.12.192.221 ttl=1d address-list=autohost
 /ip dns static add name=assistant-s3-pa.googleapis.com address=204.12.192.221 ttl=1d address-list=autohost
-/ip dns static add name=datalore.jetbrains.com address=204.12.192.221 ttl=1d address-list=autohost
 /ip dns static add name=images.tidal.com address=204.12.192.221 ttl=1d address-list=autohost
 /ip dns static add name=open.spotify.com address=204.12.192.221 ttl=1d address-list=autohost
 /ip dns static add name=operator.chatgpt.com address=204.12.192.221 ttl=1d address-list=autohost
@@ -67,6 +65,7 @@
 /ip dns static add name=api-global.squareup.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api-partner.spotify.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.elevenlabs.io address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=api.github.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.individual.githubcopilot.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.openai.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.spotify.com address=204.12.192.222 ttl=1d address-list=autohost
@@ -127,7 +126,6 @@
 /ip dns static add name=webchannel-alkalimakersuite-pa.clients6.google.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=webrtc.chatgpt.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=write-free.www.deepl.com address=204.12.192.222 ttl=1d address-list=autohost
-/ip dns static add name=www.canva.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=www.deepl.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=www.intel.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=www.notion.so address=204.12.192.222 ttl=1d address-list=autohost
@@ -142,6 +140,9 @@
 /ip dns static add name=usher.ttvnw.net address=45.95.233.23 ttl=1d address-list=autohost
 /ip dns static add name=www.dyson.com address=45.95.233.23 ttl=1d address-list=autohost
 /ip dns static add name=www.dyson.fr address=45.95.233.23 ttl=1d address-list=autohost
+/ip dns static add name=www.tiktok.com address=50.7.85.219 ttl=1d address-list=autohost
+/ip dns static add name=datalore.jetbrains.com address=50.7.85.221 ttl=1d address-list=autohost
+/ip dns static add name=www.canva.com address=50.7.85.222 ttl=1d address-list=autohost
 /ip dns static add name=tracker.openbittorrent.com address=52.223.13.41 ttl=1d address-list=autohost
 /ip dns static add name=yt3.ggpht.com address=64.233.164.198 ttl=1d address-list=autohost
-/log info "[update-hosts] Added 145 entries"
+/log info "[update-hosts] Added 146 entries"
