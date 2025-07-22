@@ -12,12 +12,15 @@
 /ip dns static add name=yip.su address=192.0.2.1 ttl=1d address-list=autohost
 /ip dns static add name=plugins.jetbrains.com address=107.150.34.100 ttl=1d address-list=autohost
 /ip dns static add name=builds.parsec.app address=107.150.34.99 ttl=1d address-list=autohost
+/ip dns static add name=cs3b2e.4pda.ws address=141.94.143.110 ttl=1d address-list=autohost
 /ip dns static add name=web.archive.org address=142.54.189.106 ttl=1d address-list=autohost
 /ip dns static add name=b.i.instagram.com address=157.240.245.174 ttl=1d address-list=autohost
 /ip dns static add name=help.instagram.com address=157.240.245.174 ttl=1d address-list=autohost
 /ip dns static add name=instagram.com address=157.240.245.174 ttl=1d address-list=autohost
 /ip dns static add name=www.instagram.com address=157.240.245.174 ttl=1d address-list=autohost
 /ip dns static add name=z-p42-chat-e2ee-ig.facebook.com address=157.240.245.174 ttl=1d address-list=autohost
+/ip dns static add name=cs7f6c.4pda.ws address=185.234.59.26 ttl=1d address-list=autohost
+/ip dns static add name=4pda.to address=185.246.223.127 ttl=1d address-list=autohost
 /ip dns static add name=aisandbox-pa.googleapis.com address=204.12.192.219 ttl=1d address-list=autohost
 /ip dns static add name=android.chat.openai.com address=204.12.192.219 ttl=1d address-list=autohost
 /ip dns static add name=api.fitbit.com address=204.12.192.219 ttl=1d address-list=autohost
@@ -135,8 +138,10 @@
 /ip dns static add name=xgpuwebf2p.gssv-play-prod.xboxlive.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=xpui.app.spotify.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=xsts.auth.xboxlive.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=cs4a0d.4pda.ws address=217.182.194.171 ttl=1d address-list=autohost
 /ip dns static add name=mail.proton.me address=3.66.189.153 ttl=1d address-list=autohost
 /ip dns static add name=protonmail.com address=3.66.189.153 ttl=1d address-list=autohost
+/ip dns static add name=cs11a0a.4pda.ws address=45.81.252.72 ttl=1d address-list=autohost
 /ip dns static add name=usher.ttvnw.net address=45.95.233.23 ttl=1d address-list=autohost
 /ip dns static add name=www.dyson.com address=45.95.233.23 ttl=1d address-list=autohost
 /ip dns static add name=www.dyson.fr address=45.95.233.23 ttl=1d address-list=autohost
@@ -144,5 +149,7 @@
 /ip dns static add name=datalore.jetbrains.com address=50.7.85.221 ttl=1d address-list=autohost
 /ip dns static add name=www.canva.com address=50.7.85.222 ttl=1d address-list=autohost
 /ip dns static add name=tracker.openbittorrent.com address=52.223.13.41 ttl=1d address-list=autohost
+/ip dns static add name=cs2c9f.4pda.ws address=54.36.104.75 ttl=1d address-list=autohost
+/ip dns static add name=api.manus.im address=64.188.98.242 ttl=1d address-list=autohost
 /ip dns static add name=yt3.ggpht.com address=64.233.164.198 ttl=1d address-list=autohost
-/log info "[update-hosts] Added 146 entries"
+/log info "[update-hosts] Added 153 entries"
