@@ -33,16 +33,7 @@
 /ip dns static add name=deezer.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=developer.nvidia.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=dzcdn.net address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=ol.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=on.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=payment-website-pci.ol.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=payment.deezer.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=perf.store.on.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=static-assets-prod.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=store.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=store.on.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
-/ip dns static add name=tracking.epicgames.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=tria.ge address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=upsx.weather.com address=204.12.192.220 ttl=1d address-list=autohost
 /ip dns static add name=weather.com address=204.12.192.220 ttl=1d address-list=autohost
@@ -65,8 +56,6 @@
 /ip dns static add name=api-global.squareup.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api-partner.spotify.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.elevenlabs.io address=204.12.192.222 ttl=1d address-list=autohost
-/ip dns static add name=api.github.com address=204.12.192.222 ttl=1d address-list=autohost
-/ip dns static add name=api.individual.githubcopilot.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.openai.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.spotify.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=api.squareup.com address=204.12.192.222 ttl=1d address-list=autohost
@@ -90,6 +79,7 @@
 /ip dns static add name=elevenlabs.io address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=elevenreader.io address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=encore.scdn.co address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=experimentation.deepl.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=files.oaiusercontent.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=fsu.fa.tidal.com address=204.12.192.222 ttl=1d address-list=autohost
@@ -111,17 +101,24 @@
 /ip dns static add name=notebooklm.google address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=notebooklm.google.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=o.pki.goog address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=ol.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=on.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=payment-website-pci.ol.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=perf.store.on.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=platform.openai.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=proactivebackend-pa.googleapis.com address=204.12.192.222 ttl=1d address-list=autohost
-/ip dns static add name=proxy.individual.githubcopilot.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=resources.tidal.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=s.deepl.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=sora.chatgpt.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=sora.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=spclient.wg.spotify.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=static-assets-prod.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=stitch.withgoogle.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=store.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=store.on.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=sydney.bing.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=tcr9i.chat.openai.com address=204.12.192.222 ttl=1d address-list=autohost
+/ip dns static add name=tracking.epicgames.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=videos.openai.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=webchannel-alkalimakersuite-pa.clients6.google.com address=204.12.192.222 ttl=1d address-list=autohost
 /ip dns static add name=webrtc.chatgpt.com address=204.12.192.222 ttl=1d address-list=autohost
@@ -145,4 +142,4 @@
 /ip dns static add name=www.canva.com address=50.7.85.222 ttl=1d address-list=autohost
 /ip dns static add name=tracker.openbittorrent.com address=52.223.13.41 ttl=1d address-list=autohost
 /ip dns static add name=yt3.ggpht.com address=64.233.164.198 ttl=1d address-list=autohost
-/log info "[update-hosts] Added 146 entries"
+/log info "[update-hosts] Added 143 entries"
